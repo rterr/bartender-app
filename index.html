@@ -16,7 +16,7 @@
 	<fieldset id="drink-strong">
 		<h3>Do ye like yer drinks strong?</h3>
 
-		<input value="1" type="radio" name='strong'>
+		<input value="1" type="radio" name='strong' checked="checked">
 		<label>Yes!</label>
 
 		<input value="0" name="strong" type="radio" name='strength'>
@@ -29,7 +29,7 @@
 		<h3>Do ye like it with a salty tang?</h3>
 		<input value="1" name="salty" type="radio">
 		<label>Yes!</label>
-		<input value="0" name="salty" type="radio">
+		<input value="0" name="salty" type="radio" checked="checked">
 		<label>Nope!</label>
 	</fieldset>
 
@@ -38,14 +38,14 @@
 		<h3>Are ye a lubber who likes it bitter?</h3>
 		<input value="1"  name="bitter" type="radio">
 		<label>Yes!</label>
-		<input value="0" name="bitter" type="radio">
+		<input value="0" name="bitter" type="radio" checked="checked">
 		<label>Nope!</label>
 	</fieldset>
 
 
 	<fieldset id="drink-sweet">
 		<h3>Would ye like a bit of sweetness with yer poison?</h3>
-		<input value="1" name="sweet" type="radio">
+		<input value="1" name="sweet" type="radio" checked="checked">
 		<label>Yes!</label>
 		<input value="0" name="sweet"  type="radio">
 		<label>Nope!</label>
@@ -54,13 +54,15 @@
 
 	<fieldset id="drink-fruity">
 		<h3>Are ye one for a fruity finish?</h3>
-		<input value="1" name="fruity" type="radio">
+		<input value="1" name="fruity" type="radio" checked="checked">
 		<label>Yes!</label>
 		<input value="0" name="fruity" type="radio">
 		<label>Nope!</label>
 	</fieldset>
 	<button id="submit" type="submit">Get My drink</button>
 </form>
+
+<span id="finished-drink"></span>
 	</div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="js/app.js"></script>
