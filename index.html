@@ -12,53 +12,54 @@
 	<div class="binding-box">
 		<h2>How ye want yer drink, matey?</h2>
 
-
+<form>
 	<fieldset id="drink-strong">
 		<h3>Do ye like yer drinks strong?</h3>
-		<input type="radio" name="yes" class="yes">
-		<label for="yes">Yes!</label>
-		<input type="radio" name="no" class="no">
-		<label for="no">Nope!</label>
+		<input value="1" name="strong" type="radio">
+		<label>Yes!</label>
+		<input value="0" name="strong" type="radio">
+		<label>Nope!</label>
 	</fieldset>
 
 
 	<fieldset id="drink-salty">
 		<h3>Do ye like it with a salty tang?</h3>
-		<input type="radio" name="yes" class="yes">
-		<label for="yes">Yes!</label>
-		<input type="radio" name="no" class="no">
-		<label for="no">Nope!</label>
+		<input value="1" name="salty" type="radio">
+		<label>Yes!</label>
+		<input value="0" name="salty" type="radio">
+		<label>Nope!</label>
 	</fieldset>
 
 
 	<fieldset id="drink-bitter">
 		<h3>Are ye a lubber who likes it bitter?</h3>
-		<input type="radio" name="yes" class="yes">
-		<label for="yes">Yes!</label>
-		<input type="radio" name="no" class="no">
-		<label for="no">Nope!</label>
+		<input value="1"  name="bitter" type="radio">
+		<label>Yes!</label>
+		<input value="0" name="bitter" type="radio">
+		<label>Nope!</label>
 	</fieldset>
 
 
 	<fieldset id="drink-sweet">
 		<h3>Would ye like a bit of sweetness with yer poison?</h3>
-		<input type="radio" name="yes" class="yes">
-		<label for="yes">Yes!</label>
-		<input type="radio" name="no" class="no">
-		<label for="no">Nope!</label>
+		<input value="1" name="sweet" type="radio">
+		<label>Yes!</label>
+		<input value="0" name="sweet"  type="radio">
+		<label>Nope!</label>
 	</fieldset>
 
 
 	<fieldset id="drink-fruity">
 		<h3>Are ye one for a fruity finish?</h3>
-		<input type="radio" name="yes" class="yes">
-		<label for="yes">Yes!</label>
-		<input type="radio" name="no" class="no">
-		<label for="no">Nope!</label>
+		<input value="1" name="fruity" type="radio">
+		<label>Yes!</label>
+		<input value="0" name="fruity" type="radio">
+		<label>Nope!</label>
 	</fieldset>
-
+	<button id="submit" type="submit">Get My drink</button>
+</form>
 	</div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
