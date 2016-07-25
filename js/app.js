@@ -33,11 +33,11 @@ $(document).ready(function() {
             parseInt($('#drink-sweet input:checked').val()),
             parseInt($('#drink-fruity input:checked').val()));
         var ingredients = ingredientSelector(userPref);
-        console.log(userPref['strong'])
+        console.log(userPref['strong']);
 
     });
 
-    //how to evaluate if it is yes or no ? 
+    //how to evaluate if it is yes or no? 
     //1 is for yes 
     //0 if for no
     // userPref = [0, 1, 0, 0, 1]
@@ -52,6 +52,7 @@ $(document).ready(function() {
         for (var i in userPref) {
         	// i is the property --> for-in loop
             if (userPref[i] === 1) {
+
                 // random get a [0] ingredient
             }
         }
