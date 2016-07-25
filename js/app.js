@@ -22,8 +22,6 @@ $(document).ready(function() {
 
     //Step 3: fetch or collect the inputs of the user / instantiate prefCreator
 
-    // var userPref = [];	
-
     $('form').submit(function(e) {
         e.preventDefault();
         var userPref = new prefCreator(
@@ -36,31 +34,22 @@ $(document).ready(function() {
         $('#finished-drink').text(ingredients);
     });
 
-    //how to evaluate if it is yes or no? 
-    //1 is for yes 
-    //0 if for no
-    // userPref = [0, 1, 0, 0, 1]
-
-    // userPref[0].bitter
-
-// Math.floor(Math.random() * 3)   
+    //Step 4: Make drink based on selected preferences, return a drink string to DOM
 
     function ingredientSelector(userPref) {
-    	var finishedDrink = [];
+      var finishedDrink = [];
         var drinkOutput;
-    	// / for in?
-
         for (var i in userPref) {
             if (userPref[i] == 1) {
                 var ranNum = parseInt(Math.floor(Math.random() * 3));
                 finishedDrink.push(pantry[i][ranNum]);
                 }
         }
-        console.log(finishedDrink);
+        // Appropriate responses for number of preferences chosen
         if (finishedDrink.length < 1) {
             return 'Ye don\'t like nothin\'!? Git some water!'
         } 
-        else if (finishedDrink.length == 1){
+        else if (finishedDrink.length == 1) {
             drinkOutput = finishedDrink.toString();
             return drinkOutput;
         }
@@ -69,12 +58,5 @@ $(document).ready(function() {
             drinkOutput = finishedDrink.join(', ') + ' and ' + lastItem;
             return drinkOutput;
         }
-           
-
-        }
-
-
-
-
-
+    }
 });
