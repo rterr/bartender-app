@@ -41,9 +41,15 @@ $(document).ready(function() {
             }
             else {
                 var lastItem = finishedDrink.pop();
-                if(finishedDrink[0][0] == )
-                drinkOutput = 'a ' + finishedDrink.join(', a ') + ' and a ' + lastItem;
-                return drinkOutput;
+                if( /[aeiouAEIOU]/.test(finishedDrink[0][0])){
+                    drinkOutput = 'An ' + finishedDrink.join(', a ') + ' and a ' + lastItem;
+                    return drinkOutput;
+                } else {
+                    drinkOutput = 'A ' + finishedDrink.join(', a ') + ' and a ' + lastItem;
+                    // console.log(finishedDrink);
+                    return drinkOutput;
+                }
+                
         }
     }
   };
