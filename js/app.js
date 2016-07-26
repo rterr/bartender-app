@@ -10,6 +10,16 @@ $(document).ready(function() {
         fruity: ['slice of orange', 'dash of cassis', 'cherry on top'],
     };
 
+//Pantry obj literal to Constructor and 
+    //random ingredient as method of Pantry 
+
+    var attributes = {
+        STRONG: 'strong',
+        SALTY: 'salty',
+        BITTER: 'bitter',
+        SWEET: 'sweet',
+        FRUITY: 'fruity'
+    };
     //step 2 : make constructor to fetch yes/no values
 
     function prefCreator(strong, salty, bitter, sweet, fruity) {
@@ -20,9 +30,37 @@ $(document).ready(function() {
         this.fruity = fruity;
     }
 
+    // Refactoring Questions  
+
+    function Question(attribute, text) {
+        this.attribute = attribute;
+        this.text = text;
+    }
+
+    Question.prototype.asHTML = function() {
+    return '<fieldset id="drink-'+ this.attribute +'"><h3>' + this.text 
+      + '</h3><input value="1" type="radio" name="'+ this.attribute + 
+      '"><label>Yes!</label><input value="0" name="'
+      + this.attribute +'" type="radio"><label>Nope!</label></fieldset>';
+};
+    //STEP 2.b append quetions to the DOM (to Form) available on Document load
+
+    var strongQuestion = new Question(attributes.STRONG, 'Do ye like yer drinks strong?');
+    var saltyQuestion = new Question(attributes.SALTY, 'Do ye like it with a salty tang?');
+    var bitterQuestion = new Question(attributes.BITTER, 'Are ye a lubber who likes it bitter?');
+    var sweetQuestion = new Question(attributes.SWEET, 'Would ye like a bit of sweetness with yer poison?');
+    var fruityQuestion = new Question(attributes.FRUITY, 'Are ye one for a fruity finish?');
+
+
+    $('form').prepend(fruityQuestion.asHTML());
+    $('form').prepend(sweetQuestion.asHTML());
+    $('form').prepend(bitterQuestion.asHTML());
+    $('form').prepend(saltyQuestion.asHTML());
+    $('form').prepend(strongQuestion.asHTML());
+
     //Step 3: fetch or collect the inputs of the user / instantiate prefCreator
 
-    $('form').submit(function(e) {
+    $('form').on('submit', function(e) {
         e.preventDefault();
         var userPref = new prefCreator(
             parseInt($('#drink-strong input:checked').val()),
@@ -59,4 +97,17 @@ $(document).ready(function() {
             return drinkOutput;
         }
     }
+
+    //Refactor Questions display 
+    // Constructor for Every single question on HTML 
+    // 
 });
+
+
+   // <fieldset id="drink-' + ">
+   //      <h3>Would ye like a bit of sweetness with yer poison?</h3>
+   //      <input value="1" name="sweet" type="radio" checked="checked">
+   //      <label>Yes!</label>
+   //      <input value="0" name="' + attr + '"  type="radio">
+   //      <label>Nope!</label>
+   //  </fieldset>
